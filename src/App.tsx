@@ -43,19 +43,34 @@ export const DateCounter = () => {
     setDay(result);
   };
 
+  const handleSlider = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    const result = parseInt(e.target.value);
+    setStep(result);
+  };
+
   return (
     <>
       <div>
         {/* <button onClick={handleDecreaseStep}></button> */}
         {/* Step:{step} */}
 
-        <input type="range" min="0" max="10" />
+        {/* we need onChange here to handle the changed value in slider! */}
+        <input
+          type="range"
+          min="0"
+          max="10"
+          value={step}
+          onChange={(e) => handleSlider(e)}
+        />
         {step}
         {/* <button onClick={handleIncreaseStep}></button> */}
       </div>
       <div>
         <button onClick={handleDecrease}>-</button>
         {/* Count:{day} */}
+
+        {/* we need onChange here to handle the entered value in field! */}
         <input type="text" value={day} onChange={(e) => handleInput(e)} />
         <button onClick={handleIncrease}>+</button>
       </div>
