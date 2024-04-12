@@ -92,7 +92,13 @@ export const DateCounter = () => {
           : ""}
       </h1>
 
-      {(day != 0 || step != 1) && <button onClick={handleReset}>Reset</button>}
+      {/* using && */}
+      {/* {(day != 0 || step != 1) && <button onClick={handleReset}>Reset</button>} */}
+
+      {/* OR using ternary operator: */}
+      {day != 0 || step != 1 ? (
+        <button onClick={handleReset}>Reset</button>
+      ) : null}
     </>
   );
 };
