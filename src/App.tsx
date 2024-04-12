@@ -49,6 +49,11 @@ export const DateCounter = () => {
     setStep(result);
   };
 
+  const handleReset = () => {
+    setDay(0);
+    setStep(1);
+  };
+
   return (
     <>
       <div>
@@ -84,6 +89,7 @@ export const DateCounter = () => {
             step * Math.abs(day) + " day(s) ago was " + nextDay.toDateString()
           : ""}
       </h1>
+      {(day != 0 || step != 1) && <button onClick={handleReset}>Reset</button>}
     </>
   );
 };
