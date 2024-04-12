@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export default function App() {
   return (
@@ -37,16 +37,26 @@ export const DateCounter = () => {
     setStep((s) => s - 1);
   };
 
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    // console.log(e.target.value);
+    const result = parseInt(e.target.value);
+    setDay(result);
+  };
+
   return (
     <>
       <div>
-        <button onClick={handleDecreaseStep}>-</button>
-        Step:{step}
-        <button onClick={handleIncreaseStep}>+</button>
+        {/* <button onClick={handleDecreaseStep}></button> */}
+        {/* Step:{step} */}
+
+        <input type="range" min="0" max="10" />
+        {step}
+        {/* <button onClick={handleIncreaseStep}></button> */}
       </div>
       <div>
         <button onClick={handleDecrease}>-</button>
-        Count:{day}
+        {/* Count:{day} */}
+        <input type="text" value={day} onChange={(e) => handleInput(e)} />
         <button onClick={handleIncrease}>+</button>
       </div>
       <h1>
