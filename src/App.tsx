@@ -44,7 +44,7 @@ export const DateCounter = () => {
   };
 
   const handleSlider = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     const result = parseInt(e.target.value);
     setStep(result);
   };
@@ -71,6 +71,7 @@ export const DateCounter = () => {
         {step}
         {/* <button onClick={handleIncreaseStep}></button> */}
       </div>
+
       <div>
         <button onClick={handleDecrease}>-</button>
         {/* Count:{day} */}
@@ -79,6 +80,7 @@ export const DateCounter = () => {
         <input type="text" value={day} onChange={(e) => handleInput(e)} />
         <button onClick={handleIncrease}>+</button>
       </div>
+
       <h1>
         {day === 0 ? " day(s) from Today is " + nextDay.toDateString() : ""}
         {day > 0
@@ -89,6 +91,7 @@ export const DateCounter = () => {
             step * Math.abs(day) + " day(s) ago was " + nextDay.toDateString()
           : ""}
       </h1>
+
       {(day != 0 || step != 1) && <button onClick={handleReset}>Reset</button>}
     </>
   );
