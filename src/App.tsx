@@ -29,13 +29,13 @@ export const DateCounter = () => {
     setDay((d) => d - 1);
   };
 
-  const handleIncreaseStep = () => {
-    setStep((s) => s + 1);
-  };
+  // const handleIncreaseStep = () => {
+  //   setStep((s) => s + 1);
+  // };
 
-  const handleDecreaseStep = () => {
-    setStep((s) => s - 1);
-  };
+  // const handleDecreaseStep = () => {
+  //   setStep((s) => s - 1);
+  // };
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     // console.log(e.target.value);
